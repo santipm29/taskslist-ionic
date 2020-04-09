@@ -41,7 +41,6 @@ export class AddPage implements OnInit {
       this.taskList.finished = false;
     }
     this.taskService.saveStorage();
-    console.log(this.taskService.taskList);
   }
 
 
