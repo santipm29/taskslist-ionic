@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { TaskService } from "../../services/task.service";
 import { Router } from '@angular/router';
+import { TaskService } from "../../services/task.service";
 import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-tab1',
@@ -44,4 +45,6 @@ export class Tab1Page {
     await alert.present();
     
   }
+
+
 }

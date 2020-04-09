@@ -31,4 +31,22 @@ export class AddPage implements OnInit {
     this.taskService.saveStorage();
   }
 
+  changeCheck( task: Task ) {
+    const pending = this.taskList.tasks.filter( item => !item.finished).length;
+    if (pending === 0) {
+      this.taskList.finishedIn = new Date();
+      this.taskList.finished = true;
+    } else {
+      this.taskList.finishedIn = null;
+      this.taskList.finished = false;
+    }
+    this.taskService.saveStorage();
+    console.log(this.taskService.taskList);
+  }
+
+
+  delete( index: number ) {
+    this.taskList.tasks.splice( index, 1);
+    this.taskService.saveStorage();
+  }
 }
