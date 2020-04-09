@@ -22,6 +22,11 @@ export class TaskService {
     return this.taskList.find(list => list.id === id);
   }
 
+  deleteTaskList( list: List ) {
+    this.taskList = this.taskList.filter( item => item.id !== list.id );
+    this.saveStorage();
+  }
+
   saveStorage() {
     localStorage.setItem("data", JSON.stringify(this.taskList));
   }
