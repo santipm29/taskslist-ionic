@@ -4,13 +4,14 @@ export class List {
     id: number;
     title: string;
     createdIn: Date;
-    finishedIn: boolean;
+    finishedIn: Date;
+    finished: boolean;
     tasks: Task[];
 
     constructor( title: string ) {
         this.title = title;
         this.createdIn = new Date();
-        this.finishedIn = false;
+        this.finished = false;
         this.tasks = [];
         this.id = new Date().getTime();
     }
